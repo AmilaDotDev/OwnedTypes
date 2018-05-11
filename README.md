@@ -3,7 +3,25 @@ This repository contains code to demonstrate an error I'm getting when using Pro
 
 OwnedTypes project is working without any exception. 
 
-OwnedTypes.NotWorking gives an exception when I query for data already in the database.
+OwnedTypes.NotWorking gives the following exception when I query for data already in the database.
+
+```
+{System.NullReferenceException: Object reference not set to an instance of an object.
+   at lambda_method(Closure , QueryContext , Person , Object[] )
+   at Microsoft.EntityFrameworkCore.Query.Internal.IncludeCompiler._Include[TEntity](QueryContext queryContext, TEntity entity, Object[] included, Action`3 fixup)
+   at lambda_method(Closure , TransparentIdentifier`2 )
+   at System.Linq.Enumerable.SelectEnumerableIterator`2.MoveNext()
+   at System.Linq.Enumerable.TryGetFirst[TSource](IEnumerable`1 source, Boolean& found)
+   at lambda_method(Closure )
+   at Microsoft.EntityFrameworkCore.Query.Internal.LinqOperatorProvider.ResultEnumerable`1.GetEnumerator()
+   at Microsoft.EntityFrameworkCore.Query.Internal.LinqOperatorProvider.<_TrackEntities>d__17`2.MoveNext()
+   at Microsoft.EntityFrameworkCore.Query.Internal.LinqOperatorProvider.ExceptionInterceptor`1.EnumeratorExceptionInterceptor.MoveNext()
+   at System.Linq.Enumerable.TryGetFirst[TSource](IEnumerable`1 source, Boolean& found)
+   at System.Linq.Enumerable.First[TSource](IEnumerable`1 source)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.<>c__DisplayClass15_1`1.<CompileQueryCore>b__0(QueryContext qc)
+   at System.Linq.Queryable.FirstOrDefault[TSource](IQueryable`1 source)
+   at OwnedTypes.NotWorking.Program.Main(String[] args) in ...\OwnedTypes\OwnedTypes.NotWorking\Program.cs:line 26}
+```
 
 # What's Comman between OwnedTypes Project and OwnedTypes.NotWorking project
 
